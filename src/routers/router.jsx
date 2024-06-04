@@ -8,6 +8,8 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import UserInfo from "../pages/UserInfo/UserInfo";
 import AddItem from "../pages/AddItem/AddItem";
 import AllItems from "../pages/AllItems/AllItems";
+import EditPage from "../pages/EditPage/EditPage";
+import ItemDetails from "../pages/ItemDetails/ItemDetails";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +29,11 @@ const router = createBrowserRouter([
                 path: "/register",
                 element: <Register />
             },
+            {
+                path: "/itemDetails/:id",
+                element: <ItemDetails />,
+                loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`)
+            },
         ]
     },
     {
@@ -35,17 +42,24 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             {
-                path: '',
+                path: 'dashboard',
                 element: <UserInfo />
             },
             {
                 path: 'addItem',
                 element: <AddItem />
             },
+
             {
                 path: 'allItems',
                 element: <AllItems />
             },
+            {
+                path: 'allItems/edit/:id',
+                element: <EditPage />,
+                loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`)
+            },
+
         ]
     }
 ]);

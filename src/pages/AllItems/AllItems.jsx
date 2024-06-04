@@ -15,14 +15,14 @@ const AllItems = () => {
             })
     }, [])
 
-    const handleDeleteFoods = (id) => {
-        setItems(items.filter(item => item.id !== id))
+    const handleDeleteItem = (id) => {
+        setItems(items.filter(item => item._id !== id))
     }
 
     return (
         <div className="">
             {
-                items?.map(itemData => <ItemsCard key={itemData.id} itemData={itemData} onDelete={handleDeleteFoods} />)
+                items?.map(itemData => <ItemsCard key={itemData._id} itemData={itemData} onDelete={handleDeleteItem} />)
             }
         </div>
     );

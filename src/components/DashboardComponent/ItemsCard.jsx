@@ -6,7 +6,7 @@ const ItemsCard = ({ itemData, onDelete }) => {
 
     const { _id, title, price, cooking_time, description, img_url } = itemData
     const handleDelete = async () => {
-        await fetch(`http://localhost:3000/foods/${_id}`, {
+        await fetch(`http://localhost:5000/items/${_id}`, {
             method: "DELETE",
         })
             .then(res => res.json())
@@ -35,10 +35,10 @@ const ItemsCard = ({ itemData, onDelete }) => {
                 <p>{description}</p>
                 <div className="card-actions justify-end">
                     <button className="btn bg-green-700 text-white hover:bg-green-800">
-                        <Link to={`/foodDetails/${_id}`}>Details</Link>
+                        <Link to={`/itemDetails/${_id}`}>Details</Link>
                     </button>
                     <button className="btn bg-emerald-500 text-white hover:bg-emerald-600">
-                        <Link to={`/edit/${_id}`}>Edit</Link>
+                        <Link to={`edit/${_id}`}>Edit</Link>
                     </button>
                     <button onClick={handleDelete} className="btn bg-red-700 text-white hover:bg-red-800">Delete</button>
                 </div>
