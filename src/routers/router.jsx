@@ -7,6 +7,7 @@ import ErrorPage from "../pages/Error/ErrorPage";
 import DashboardLayout from "../layouts/DashboardLayout";
 import UserInfo from "../pages/UserInfo/UserInfo";
 import AddItem from "../pages/AddItem/AddItem";
+import AllItems from "../pages/AllItems/AllItems";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: 'addItem',
                 element: <AddItem />
+            },
+            {
+                path: 'allItems',
+                element: <AllItems />
             },
         ]
     }
