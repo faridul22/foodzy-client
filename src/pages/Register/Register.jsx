@@ -35,8 +35,8 @@ const Register = () => {
                 updateUser(data.name, data.photoURL)
                     .then(() => {
 
-                        const savedUser = { name: data.name, email: data.email, image: data.photoURL, role: 'student' }
-                        fetch('https://pro-drawing-server.vercel.app/users', {
+                        const savedUser = { name: data.name, email: data.email, image: data.photoURL }
+                        fetch('http://localhost:5000/user', {
                             method: "POST",
                             headers: {
                                 'content-type': 'application/json'

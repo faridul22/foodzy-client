@@ -15,9 +15,10 @@ const SocialLogin = () => {
         googleSignIn()
             .then((result) => {
                 const loggedInUser = result.user;
+
                 navigate(from, { replace: true });
-                const savedUser = { name: loggedInUser.displayName, email: loggedInUser.email, image: loggedInUser.photoURL, role: 'student' }
-                fetch('https://pro-drawing-server.vercel.app/users', {
+                const savedUser = { name: loggedInUser?.displayName, email: loggedInUser?.email, image: loggedInUser?.photoURL, }
+                fetch('http://localhost:5000/user', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json'

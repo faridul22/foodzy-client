@@ -5,11 +5,12 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/Error/ErrorPage";
 import DashboardLayout from "../layouts/DashboardLayout";
-import UserInfo from "../pages/UserInfo/UserInfo";
 import AddItem from "../pages/AddItem/AddItem";
 import AllItems from "../pages/AllItems/AllItems";
 import EditPage from "../pages/EditPage/EditPage";
 import ItemDetails from "../pages/ItemDetails/ItemDetails";
+import ManageProfile from "../pages/ManageProfile/ManageProfile";
+import EditProfile from "../pages/EditProfile/EditProfile";
 
 const router = createBrowserRouter([
     {
@@ -42,12 +43,17 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             {
-                path: 'dashboard',
-                element: <UserInfo />
+                path: '',
+                element: <ManageProfile />
             },
             {
                 path: 'addItem',
                 element: <AddItem />
+            },
+            {
+                path: 'edit/:id',
+                element: <EditProfile />,
+                loader: ({ params }) => fetch(`http://localhost:5000/user/get/${params.id}`)
             },
 
             {
