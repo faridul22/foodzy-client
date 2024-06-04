@@ -1,7 +1,19 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                navigate('/')
+            })
+            .catch(error => { console.log(error) })
+    }
 
     const navItems = <>
         <li>
@@ -37,14 +49,21 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div className="avatar">
-                    <div className=" w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                        <img className="" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                {user ? <>
+
+                    <button onClick={handleLogOut} className="btn hover:bg-sky-700 text-white border-0 bg-[#4499B3] mx-5 normal-case">LogOut</button>
+                    <div className="avatar">
+                        <div className="w-[50px] rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                            {user.photoURL ?
+                                <img title={user?.displayName} src={user.photoURL} /> :
+                                <img title={user?.displayName} src="https://i.ibb.co/cLNMyCL/user-avata-removebg-preview.png" alt="user" />
+                            }
+                        </div>
                     </div>
-                </div>
-                <li>
-                    <Link to="/login">Login</Link>
-                </li>
+                </> : <>
+                    <Link className="btn hover:bg-sky-700 text-white border-0 mx-5 bg-[#4499B3]" to="/login">Login</Link>
+                </>
+                }
             </div>
         </div>
     );
