@@ -45,7 +45,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/allFoods',
-                element: <AllFoods />
+                element: <AllFoods />,
+                loader: () => fetch(`https://foodzy-server-wd6a.vercel.app/items`)
             },
             {
                 path: '/about',
