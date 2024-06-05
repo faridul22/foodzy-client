@@ -16,7 +16,7 @@ const AddItem = () => {
         const newData = { title, price, cooking_time, id, description, img_url }
         console.log(newData)
 
-        await fetch("http://localhost:5000/items", {
+        await fetch("https://foodzy-server-wd6a.vercel.app/items", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
