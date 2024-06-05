@@ -4,6 +4,7 @@ import OurMenu from "../../components/HomeComponents/OurMenu";
 import PopularFoodItem from "../../components/HomeComponents/PopularFoodItem";
 import SaveMoney from "../../components/HomeComponents/SaveMoney";
 import Subscribe from "../../components/HomeComponents/Subscribe";
+import Contact from "../Contact/Contact";
 
 const Home = () => {
     return (
@@ -24,6 +25,11 @@ const Home = () => {
                 <OurMenu />
             </div>
 
+            {/* subscribe section */}
+            <div className="max-w-screen-xl mx-auto">
+                <Subscribe />
+            </div>
+
             {/* serve section */}
             <div>
                 <div className="text-center mb-5">
@@ -35,10 +41,7 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* subscribe section */}
-            <div className="max-w-screen-xl mx-auto">
-                <Subscribe />
-            </div>
+            <Contact />
         </div>
     );
 };

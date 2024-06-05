@@ -20,13 +20,13 @@ const Navbar = () => {
             <Link to="/">Home</Link>
         </li>
         <li>
-            <Link to="/">Foods</Link>
+            <Link to="/allFoods">All Foods</Link>
         </li>
         <li>
-            <Link to="/">Seller</Link>
+            <Link to="/contact">Contact Us</Link>
         </li>
         <li>
-            <Link to="/">About</Link>
+            <Link to="/about">About Us</Link>
         </li>
         {user && <li>
             <Link to="/dashboard">Dashboard</Link>
@@ -44,7 +44,7 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Foodzy</a>
+                <a className="btn btn-ghost text-xl">FoodZy</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

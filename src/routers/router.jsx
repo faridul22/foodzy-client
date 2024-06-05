@@ -12,6 +12,9 @@ import ItemDetails from "../pages/ItemDetails/ItemDetails";
 import ManageProfile from "../pages/ManageProfile/ManageProfile";
 import EditProfile from "../pages/EditProfile/EditProfile";
 import PrivateRoutes from "./PrivateRoutes";
+import Contact from "../pages/Contact/Contact";
+import AllFoods from "../pages/AllFoods/AllFoods";
+import About from "../pages/About/About";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +38,18 @@ const router = createBrowserRouter([
                 path: "/itemDetails/:id",
                 element: <ItemDetails />,
                 loader: ({ params }) => fetch(`https://foodzy-server-wd6a.vercel.app/items/${params.id}`)
+            },
+            {
+                path: '/contact',
+                element: <Contact />
+            },
+            {
+                path: '/allFoods',
+                element: <AllFoods />
+            },
+            {
+                path: '/about',
+                element: <About />
             },
         ]
     },
