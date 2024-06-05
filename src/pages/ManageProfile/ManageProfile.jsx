@@ -34,36 +34,38 @@ const ManageProfile = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
-                        <tr>
-                            <td>
-                                <div className="flex items-center gap-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src={image} alt="Avatar Tailwind CSS Component" />
+                        {
+                            user ? <tr>
+                                <td>
+                                    <div className="flex items-center gap-3">
+                                        <div className="avatar">
+                                            <div className="mask mask-squircle w-12 h-12">
+                                                <img src={image} alt="User image" />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="font-bold">{name}</div>
                                         </div>
                                     </div>
-                                    <div>
-                                        <div className="font-bold">{name}</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                {email}
-                            </td>
-                            <td>
-                                {userInfo?.age}
-                            </td>
-                            <td>
-                                {userInfo?.phone}
-                            </td>
+                                </td>
+                                <td>
+                                    {email}
+                                </td>
+                                <td>
+                                    {userInfo?.age}
+                                </td>
+                                <td>
+                                    {userInfo?.phone}
+                                </td>
 
-                            <th>
-                                <button className="btn bg-emerald-500 text-white hover:bg-emerald-600">
-                                    <Link to={`edit/${_id}`}>Edit Profile</Link>
-                                </button>
-                            </th>
-                        </tr>
+                                <th>
+                                    <button className="btn bg-emerald-500 text-white hover:bg-emerald-600">
+                                        <Link to={`edit/${_id}`}>Edit Profile</Link>
+                                    </button>
+                                </th>
+                            </tr> :
+                                <p>User not found</p>
+                        }
                     </tbody>
                 </table>
             </div>

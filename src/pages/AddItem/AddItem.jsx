@@ -10,10 +10,9 @@ const AddItem = () => {
         const price = form.price.value;
         const cooking_time = form.cooking_time.value;
         const img_url = form.img_url.value;
-        const id = form.id.value;
         const description = form.description.value;
 
-        const newData = { title, price, cooking_time, id, description, img_url }
+        const newData = { title, price, cooking_time, description, img_url }
         console.log(newData)
 
         await fetch("https://foodzy-server-wd6a.vercel.app/items", {
@@ -73,12 +72,6 @@ const AddItem = () => {
                                 <span className="label-text">Image URL</span>
                             </label>
                             <input name="img_url" type="url" placeholder="Image URL" className="input input-bordered" required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Food ID</span>
-                            </label>
-                            <input name="id" type="text" placeholder="Food ID" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
