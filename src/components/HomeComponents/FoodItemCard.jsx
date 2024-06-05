@@ -1,17 +1,17 @@
 
 
-const FoodItemCard = () => {
+const FoodItemCard = ({ itemData }) => {
+    console.log(itemData)
+    const { foodTitle, img_url, price } = itemData;
     return (
-        <div className="card w-80 glass hover:bg-green-500 hover:text-white bg-slate-100">
+        <div className="card w-[98%] glass hover:bg-green-500 hover:text-white bg-slate-100 px-3">
             <figure className="px-10 pt-10">
-                <img className="rounded-t-md" src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="car!" />
+                <img className="rounded-t-md h-[200px]" src={img_url} alt="car!" />
             </figure>
             <div className="card-body items-center text-center">
-                <h2 className="card-title">Life hack</h2>
-                <p>How to park your car at your garage?</p>
-                <div className="card-actions justify-end">
-                    <button className="btn bg-[rgb(0,161,73)] text-white hover:bg-green-700">Add to Card</button>
-                </div>
+                <h2 className="card-title text-xl font-bold">{foodTitle}</h2>
+                <p className="font-bold text-x">Price: ${price}</p>
+
             </div>
         </div>
     );

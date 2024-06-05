@@ -23,7 +23,7 @@ const EditProfile = () => {
             phone: updatePhone,
         }
 
-        await fetch(`https://foodzy-server-wd6a.vercel.app/user/${userInfo?.email}`, {
+        await fetch(`http://localhost:5000/user/${userInfo?.email}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"

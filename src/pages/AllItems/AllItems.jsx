@@ -7,7 +7,7 @@ const AllItems = () => {
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        fetch("https://foodzy-server-wd6a.vercel.app/items")
+        fetch("http://localhost:5000/items")
             .then(res => res.json())
             .then(data => {
                 setItems(data)

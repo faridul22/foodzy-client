@@ -20,7 +20,7 @@ const EditPage = () => {
 
         console.log(editedData)
 
-        await fetch(`https://foodzy-server-wd6a.vercel.app/items/${_id}`, {
+        await fetch(`http://localhost:5000/items/${_id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"

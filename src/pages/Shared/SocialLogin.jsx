@@ -18,7 +18,7 @@ const SocialLogin = () => {
 
                 navigate(from, { replace: true });
                 const savedUser = { name: loggedInUser?.displayName, email: loggedInUser?.email, image: loggedInUser?.photoURL, }
-                fetch('https://foodzy-server-wd6a.vercel.app/user', {
+                fetch('http://localhost:5000/user', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json'

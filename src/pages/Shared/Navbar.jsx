@@ -54,7 +54,7 @@ const Navbar = () => {
             <div className="navbar-end">
                 {user ? <>
 
-                    <button onClick={handleLogOut} className="btn hover:bg-sky-700 text-white border-0 bg-[#4499B3] mx-5 normal-case">LogOut</button>
+                    <button onClick={handleLogOut} className="btn bg-green-600 text-white hover:bg-green-800 mx-5 normal-case">LogOut</button>
                     <div className="avatar">
                         <div className="w-[50px] rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                             {user.photoURL ?
@@ -64,7 +64,7 @@ const Navbar = () => {
                         </div>
                     </div>
                 </> : <>
-                    <Link className="btn hover:bg-sky-700 text-white border-0 mx-5 bg-[#4499B3]" to="/login">Login</Link>
+                    <Link className="btn bg-green-600 text-white hover:bg-green-800 border-0 mx-5" to="/login">Login</Link>
                 </>
                 }
             </div>

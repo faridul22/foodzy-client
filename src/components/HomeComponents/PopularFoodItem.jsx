@@ -1,14 +1,26 @@
+import { useEffect, useState } from "react";
 import FoodItemCard from "./FoodItemCard";
 
 const PopularFoodItem = () => {
+
+    const [popularItems, setPopularItems] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:5000/popularItems")
+            .then(res => res.json())
+            .then(data => {
+                setPopularItems(data)
+                console.log("form All items", data)
+            })
+    }, [])
     return (
         <div className="my-32">
             <small className="text-[rgb(0,161,73)] font-bold">Crispy, Every Bite Taste</small>
-            <h1 className="font-bold text-5xl mb-14">Popular food Items</h1>
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-                <FoodItemCard />
-                <FoodItemCard />
-                <FoodItemCard />
+            <h1 className="font-bold text-5xl mb-10">Popular food Items</h1>
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 px-3">
+                {
+                    popularItems.map(item => <FoodItemCard key={item._id} itemData={item} />)
+                }
             </div>
         </div>
     );

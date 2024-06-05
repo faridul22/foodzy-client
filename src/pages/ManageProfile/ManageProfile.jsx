@@ -9,7 +9,7 @@ const ManageProfile = () => {
 
     const [userInfo, setUserInfo] = useState([]);
     useEffect(() => {
-        fetch(`https://foodzy-server-wd6a.vercel.app/user/${user?.email}`)
+        fetch(`http://localhost:5000/user/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setUserInfo(data)

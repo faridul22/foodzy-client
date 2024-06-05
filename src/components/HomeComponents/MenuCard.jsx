@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
 
-const MenuCard = () => {
-    const { id, title, price, cooking_time, description, img_url } = items
+const MenuCard = ({ itemData }) => {
+    const { _id, title, price, cooking_time, description, img_url } = itemData
     return (
         <div className="card w-full bg-base-100 shadow-xl">
             <figure>
@@ -16,8 +16,8 @@ const MenuCard = () => {
                 </div>
                 <p>{description}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn bg-green-600 hover:bg-green-700 text-white">
-                        <Link to={`/itemsDetails/${id}`}>See Details</Link>
+                    <button className="btn bg-green-600 text-white hover:bg-green-800">
+                        <Link to={`/itemDetails/${_id}`}>See Details</Link>
                     </button>
                 </div>
             </div>
