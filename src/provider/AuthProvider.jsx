@@ -40,7 +40,7 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
-
+            setLoading(false)
             // // get and set token
             // if (currentUser) {
             //     axios.post('https://pro-drawing-server.vercel.app/jwt', { email: currentUser.email })
@@ -58,7 +58,7 @@ const AuthProvider = ({ children }) => {
         return () => {
             return unsubscribe()
         }
-    }, [])
+    }, [user])
     const userInfo = {
         auth,
         user,

@@ -12,8 +12,8 @@ const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [error, setError] = useState("")
     const [hidden, setHidden] = useState(true)
-    const { signIn, auth } = useContext(AuthContext)
-
+    const { signIn, auth, user } = useContext(AuthContext)
+    console.log(user)
     // -----Code for relocated-----
     const navigate = useNavigate();
     const location = useLocation();

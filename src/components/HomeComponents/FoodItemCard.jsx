@@ -1,7 +1,7 @@
 
 
 const FoodItemCard = ({ itemData }) => {
-    console.log(itemData)
+
     const { foodTitle, img_url, price } = itemData;
     return (
         <div className="card w-[98%] glass hover:bg-green-500 hover:text-white bg-slate-100 px-3">

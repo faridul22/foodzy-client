@@ -11,6 +11,7 @@ import EditPage from "../pages/EditPage/EditPage";
 import ItemDetails from "../pages/ItemDetails/ItemDetails";
 import ManageProfile from "../pages/ManageProfile/ManageProfile";
 import EditProfile from "../pages/EditProfile/EditProfile";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -39,20 +40,20 @@ const router = createBrowserRouter([
     },
     {
         path: "/dashboard",
-        element: <DashboardLayout />,
+        element: <PrivateRoutes><DashboardLayout /></PrivateRoutes>,
         errorElement: <ErrorPage />,
         children: [
             {
                 path: '',
-                element: <ManageProfile />
+                element: <PrivateRoutes><ManageProfile></ManageProfile></PrivateRoutes>
             },
             {
                 path: 'addItem',
-                element: <AddItem />
+                element: <PrivateRoutes><AddItem /></PrivateRoutes>
             },
             {
                 path: 'edit/:id',
-                element: <EditProfile />,
+                element: <PrivateRoutes><EditProfile /></PrivateRoutes>,
                 loader: ({ params }) => fetch(`https://foodzy-server-wd6a.vercel.app/user/get/${params.id}`)
             },
 

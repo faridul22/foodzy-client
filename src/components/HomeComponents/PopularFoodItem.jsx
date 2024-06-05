@@ -10,7 +10,7 @@ const PopularFoodItem = () => {
             .then(res => res.json())
             .then(data => {
                 setPopularItems(data)
-                console.log("form All items", data)
+
             })
     }, [])
     return (

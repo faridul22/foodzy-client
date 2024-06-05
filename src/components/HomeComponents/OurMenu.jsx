@@ -10,7 +10,6 @@ const OurMenu = () => {
             .then(res => res.json())
             .then(data => {
                 setItems(data)
-                console.log("form All items", data)
             })
     }, [])
     return (
