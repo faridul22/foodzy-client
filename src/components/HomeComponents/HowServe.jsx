@@ -7,7 +7,7 @@ const HowServe = () => {
     const [serveData, setServeData] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:5000/serve")
+        fetch("https://foodzy-server-wd6a.vercel.app/serve")
             .then(res => res.json())
             .then(data => {
                 setServeData(data)

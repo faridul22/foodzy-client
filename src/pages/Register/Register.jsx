@@ -36,7 +36,7 @@ const Register = () => {
                     .then(() => {
 
                         const savedUser = { name: data.name, email: data.email, image: data.photoURL }
-                        fetch('http://localhost:5000/user', {
+                        fetch('https://foodzy-server-wd6a.vercel.app/user', {
                             method: "POST",
                             headers: {
                                 'content-type': 'application/json'

@@ -33,7 +33,7 @@ const router = createBrowserRouter([
             {
                 path: "/itemDetails/:id",
                 element: <ItemDetails />,
-                loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`)
+                loader: ({ params }) => fetch(`https://foodzy-server-wd6a.vercel.app/items/${params.id}`)
             },
         ]
     },
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
             {
                 path: 'edit/:id',
                 element: <EditProfile />,
-                loader: ({ params }) => fetch(`http://localhost:5000/user/get/${params.id}`)
+                loader: ({ params }) => fetch(`https://foodzy-server-wd6a.vercel.app/user/get/${params.id}`)
             },
 
             {
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
             {
                 path: 'allItems/edit/:id',
                 element: <EditPage />,
-                loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`)
+                loader: ({ params }) => fetch(`https://foodzy-server-wd6a.vercel.app/items/${params.id}`)
             },
 
         ]

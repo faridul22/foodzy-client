@@ -6,7 +6,7 @@ const ItemsCard = ({ itemData, onDelete }) => {
 
     const { _id, title, price, cooking_time, description, img_url } = itemData
     const handleDelete = async () => {
-        await fetch(`http://localhost:5000/items/${_id}`, {
+        await fetch(`https://foodzy-server-wd6a.vercel.app/items/${_id}`, {
             method: "DELETE",
         })
             .then(res => res.json())
