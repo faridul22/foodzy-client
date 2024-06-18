@@ -6,7 +6,7 @@ const PopularFoodItem = () => {
     const [popularItems, setPopularItems] = useState([]);
 
     useEffect(() => {
-        fetch("https://foodzy-server-wd6a.vercel.app/popularItems")
+        fetch("https://foodzy-server.onrender.com/popularItems")
             .then(res => res.json())
             .then(data => {
                 setPopularItems(data)

@@ -15,7 +15,7 @@ const AddItem = () => {
         const newData = { title, price, cooking_time, description, img_url }
         console.log(newData)
 
-        await fetch("https://foodzy-server-wd6a.vercel.app/items", {
+        await fetch("https://foodzy-server.onrender.com/items", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

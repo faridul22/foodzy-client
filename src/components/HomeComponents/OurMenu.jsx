@@ -6,7 +6,7 @@ const OurMenu = () => {
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        fetch("https://foodzy-server-wd6a.vercel.app/items")
+        fetch("https://foodzy-server.onrender.com/items")
             .then(res => res.json())
             .then(data => {
                 setItems(data)

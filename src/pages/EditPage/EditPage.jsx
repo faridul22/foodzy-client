@@ -20,7 +20,7 @@ const EditPage = () => {
 
         console.log(editedData)
 
-        await fetch(`https://foodzy-server-wd6a.vercel.app/items/${_id}`, {
+        await fetch(`https://foodzy-server.onrender.com/items/${_id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"

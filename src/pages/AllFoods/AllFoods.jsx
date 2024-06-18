@@ -14,7 +14,7 @@ const AllFoods = () => {
     console.log("searchItem", searchItem, "searchText", searchText)
 
     const handleSearch = () => {
-        fetch(`https://foodzy-server-wd6a.vercel.app/getToyNameByText/${searchText}`)
+        fetch(`https://foodzy-server.onrender.com/getToyNameByText/${searchText}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
@@ -24,7 +24,7 @@ const AllFoods = () => {
     // -----------search end------------
 
     // useEffect(() => {
-    //     fetch("https://foodzy-server-wd6a.vercel.app/items")
+    //     fetch("https://foodzy-server.onrender.com/items")
     //         .then(res => res.json())
     //         .then(data => {
     //             setItems(data)
