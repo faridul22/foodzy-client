@@ -1,8 +1,12 @@
 import { Link, Outlet } from "react-router-dom";
+import Spinner from "../pages/Shared/Spinner";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 // import Navbar from "../components/Shared/Navbar";
 
 
 const DashboardLayout = () => {
+    const { loading } = useContext(AuthContext)
     return (
         <>
             {/* <Navbar /> */}
@@ -12,7 +16,7 @@ const DashboardLayout = () => {
                     {/* Page content here */}
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
                     <div className="w-[90%]">
-                        <Outlet />
+                        {loading ? <Spinner /> : <Outlet />}
                     </div>
 
                 </div>
