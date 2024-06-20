@@ -39,12 +39,12 @@ const AllFoods = () => {
                     <p className="">Explore our diverse collection of recipes for every occasion</p>
                 </div>
                 {/* -----------------------Search start------------------- */}
-                <div className="navbar container mx-auto  rounded-md mb-3 mt-7">
-                    <div className="w-3/4 mx-auto">
-                        <div className="form-control w-[700px] ml-10">
+                <div className="mb-3 mt-7">
+                    <div className="join flex justify-center align-middle items-center">
+                        <div className="form-control w-[700px] sm:w-[350px] ml-10">
                             <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Search by name" className="input input-bordered" />{""}
                         </div>
-                        <button className="btn bg-green-600 text-white hover:bg-green-800 mx-5 normal-case" disabled={searchText == ""} onClick={handleSearch}>Search</button>
+                        <button className="btn bg-green-600 text-white hover:bg-green-800 join-item normal-case" disabled={searchText == ""} onClick={handleSearch}>Search</button>
                     </div>
                 </div>
                 {/* --------------End---------------- */}

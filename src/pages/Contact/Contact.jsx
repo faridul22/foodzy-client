@@ -11,13 +11,11 @@ const Contact = () => {
                             <p>Feel free to drop us a message, and we will get back to you as soon as possible</p>
                         </div>
                     </div>
-                    <div className="grid lg:grid-cols-2 bg-[rgb(86,161,213)] p-20 rounded-xl text-white">
+                    <div className="grid lg:grid-cols-2 grid-cols-1 bg-[rgb(86,161,213)] p-20 rounded-xl text-white">
                         <div className="">
-                            {/* <img src="https://i.ibb.co/jyGSyBv/4794658.jpg" alt="" /> */}
                             <h1 className="text-2xl font-bold">Get In Touch</h1>
                             <p>Your email address will not be published.<br /> Required fields are marked</p>
-                            <img src="https://i.ibb.co/T8Kcswr/contact.png" alt="" />
-
+                            <img className="sm:image-full" src="https://i.ibb.co/T8Kcswr/contact.png" alt="" />
                         </div>
 
                         <div className="card">

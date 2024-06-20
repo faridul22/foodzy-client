@@ -73,15 +73,17 @@ const Register = () => {
             <Helmet>
                 <title>Pro Drawing | Register</title>
             </Helmet>
-            <div className="hero min-h-screen bg- ">
-                <div className=" my-32">
+            <div className="hero min-h-screen">
+                <div className="my-32">
                     <h1 className="text-5xl text-center uppercase mb-2 font-bold">Register now</h1>
-                    <p className="text-center text-xl">If you are a new user then fill up the form with correct information <br /> then click on Register button</p>
-                    <div className="hero-content lg:flex-row flex-col">
-                        <div className="text-center">
-                            <img width={1000} src="https://i.ibb.co/W3vSFBz/register.jpg" alt="" />
+                    <p className="text-center lg:text-xl w-[75%] mx-auto">If you are a new user then fill up the form with correct information <br /> then click on Register button</p>
+                    <div className="hero-content flex-col lg:flex-row">
+                        <div className="text-center md:w-1/2 lg:text-left">
+                            <div className="text-center">
+                                <img className="lg:w-full w-[75%]" src="https://i.ibb.co/W3vSFBz/register.jpg" alt="" />
+                            </div>
                         </div>
-                        <div className="card w-full  shadow-2xl bg-base-100 card-body">
+                        <div className="card w-full md:w-1/2 max-w-sm shadow-2xl bg-base-100 card-body">
                             <form onSubmit={handleSubmit(onSubmit)} className="">
                                 <div className="form-control">
                                     <label className="label">

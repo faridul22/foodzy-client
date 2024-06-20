@@ -81,7 +81,7 @@ const Login = () => {
             <Helmet>
                 <title> Foodzy | Login</title>
             </Helmet>
-            <div className="hero  min-h-screen">
+            <div className="hero min-h-screen">
                 <div className='my-32'>
                     <h1 className="text-5xl text-center mb-2 uppercase font-bold">Login now!</h1>
                     <p className="text-center text-xl">If you are a existing user please fill up the form with correct information <br /> then click on Login button</p>
